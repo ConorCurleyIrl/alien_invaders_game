@@ -8,7 +8,7 @@ class Ship:
         self.screen_rect = ai_game.screen.get_rect()
 
         #load ship image anf get its 'rect'. rectangle for efficent game processsing
-        self.image = pygame.image.load('c:/Users/Conor/alien_invaders_game/main/images/ship.bmp') # relative path main\images\ship.bmp 
+        self.image = pygame.image.load('c:/Users/Conor/alien_invaders_game/main/images/millenium_falcon.bmp') # relative path main\images\ship.bmp 
         self.rect = self.image.get_rect()
 
         #Start each new ship at the bottom center of the screen

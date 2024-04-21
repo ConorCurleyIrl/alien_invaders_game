@@ -24,7 +24,9 @@ class AlienInvasion:
         self.ship= Ship(self)
         
         #set the background colour
-        self.bg_color = (230,230,230) #equal ammounts of red, blue, green produces a grey color
+        #self.bg_color = (230,230,30) #equal ammounts of red, blue, green produces a grey color
+        # below is a replacement for the above so settings is where the color is defined
+        self.bg_color = self.settings.bg_color
 
     def run_game(self):
         """Start the main loop for thep game"""
@@ -58,6 +60,10 @@ class AlienInvasion:
 
     def _update_screen(self):
         '''Updates '''
+        self.screen.fill(self.settings.bg_color)
+        self.ship.blitme()
+
+        pygame.display.flip()
 
 if __name__ == '__main__': #???? i dont know what this means?
 
