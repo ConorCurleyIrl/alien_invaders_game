@@ -3,10 +3,11 @@ import pygame
 class Ship:
     """Class for ship to shoot bullets"""
     
-    def __init__(self,ai_game) -> None:
+    def __init__(self,ai_game):
+        
         self.screen = ai_game.screen
-        self.screen_rect = ai_game.screen.get_rect()
         self.settings = ai_game.settings
+        self.screen_rect = ai_game.screen.get_rect()
 
         #load ship image anf get its 'rect'. rectangle for efficent game processsing
         self.image = pygame.image.load('c:/Users/Conor/alien_invaders_game/main/images/millenium_falcon.bmp') # relative path main\images\ship.bmp 
@@ -30,7 +31,7 @@ class Ship:
             self.rect.x += self.settings.ship_speed #continuous movement when the KEYDOWN is pressed/ if TRUE
  
         if self.moving_left and self.rect.left > 0 :
-                    self.rect.x -= self.settings.ship_speed  #continuous movement when the KEYDOWN is pressed/ if TRUE
+            self.rect.x -= self.settings.ship_speed  #continuous movement when the KEYDOWN is pressed/ if TRUE
  
         #update rect oject from self.x
         #this adds only the integer position instead of the more accurate react postion which is fine for displaying purposes 

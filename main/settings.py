@@ -11,5 +11,3 @@ class Settings:
 
         #ship settings
         self.ship_speed = 1.5
-        
-        
