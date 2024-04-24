@@ -1,2 +1,2 @@
 # alien_invaders_game
-Build repo for alien invaders game
+Build repository for alien invaders game to learn fundamentals of game development with python
