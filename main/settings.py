@@ -8,4 +8,8 @@ class Settings:
         self.screen_width=600
         self.screen_height=400
         self.bg_color=(36,36,43) #RBG colour grid
+
+        #ship settings
+        self.ship_speed = 1.5
+        
         

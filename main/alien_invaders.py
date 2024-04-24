@@ -8,7 +8,6 @@ from settings import Settings
 from ship import Ship
 
 
-
 class AlienInvasion:
 
     """Overall class to manage game assets, and create game resources"""
@@ -34,6 +33,7 @@ class AlienInvasion:
             
             # this moves the code that manages events to a sperate methods. this will simplify run_game function
             self._check_events() #function created below
+            self.ship.update()
             self._update_screen() #function created below
 
             #Watch the keyboard and mouse events.
@@ -53,10 +53,28 @@ class AlienInvasion:
 
     def _check_events(self):
         """Respond to keypresses and mouse events"""
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
-                
+            elif event.type == pygame.KEYDOWN: # pressed key 
+                if event.key == pygame.K_RIGHT:
+                    #move ship to the right 
+                    self.ship.moving_right =True
+                elif event.key == pygame.K_LEFT:
+                    #move ship to the left 
+                    self.ship.moving_left =True
+
+            elif event.type == pygame.KEYUP:
+                if event.key == pygame.K_RIGHT:
+                    self.ship.moving_right = False
+                if event.key == pygame.K_LEFT:
+                self.ship.moving_left = False
+
+
+
+
+
 
     def _update_screen(self):
         '''Updates '''
@@ -70,4 +88,3 @@ if __name__ == '__main__': #???? i dont know what this means?
     # Make a game instance, and run the game.
     ai = AlienInvasion()
     ai.run_game()
-        
