@@ -8,9 +8,10 @@ class Ship():
         self.screen_rect = ai_game.screen.get_rect()
 
         # Load the ship image and get its rect.
+        #example snip of loading other file types - pygame.image.load('foo.png').convert()
         self.image = pygame.image.load('c:/Users/Conor/alien_invaders_game/main/images/millenium_falcon.bmp') # relative path main\images\ship.bmp 
         
-        self.rect = self.image.get_rect()
+        self.rect = self.image.get_rect() #creates a rect-angle object to display which can be moved in the game 
 
         # Start each new ship at the bottom center of the screen.
         self.rect.midbottom = self.screen_rect.midbottom
@@ -24,7 +25,7 @@ class Ship():
 
     def update(self):
         """Update the ship's position based on movement flags."""
-        # Update the ship's x value, not the rect.
+        # Update the ship's x value, not the rect. -  this moves the ship
         
         if self.moving_right and self.rect.right < self.screen_rect.right:
               self.x += self.settings.ship_speed
